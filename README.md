@@ -9,14 +9,32 @@ station.
 
 The repository is at its initial implementation stage. The ROS 2 workspace
 currently contains `vayuputra_interfaces`, which defines the first
-perception-to-mapping/GCS message contract. PX4 integration, simulation,
-sensors, SLAM, navigation, exploration, mission management, detection nodes,
-and the ground control station have not been implemented yet.
+perception-to-mapping/GCS message contract. The other directories below are
+scaffolding placeholders; their components are not implemented yet.
 
 ```text
+firmware/
 ros2_ws/
 └── src/
-    └── vayuputra_interfaces/   # Shared ROS 2 message definitions
+    ├── vayuputra_bringup/
+    ├── vayuputra_interfaces/  # Shared ROS 2 message definitions
+    ├── vayuputra_sensors/
+    ├── vayuputra_slam/
+    ├── vayuputra_navigation/
+    ├── vayuputra_exploration/
+    ├── vayuputra_mission/
+    ├── vayuputra_detection/
+    └── vayuputra_mavlink/
+simulation/
+├── gazebo/
+├── worlds/
+└── models/
+gcs/
+├── frontend/
+└── backend/
+scripts/
+docs/
+tests/
 ```
 
 Keep simulation assets separate from real-hardware configuration. ROS
