@@ -1,0 +1,10 @@
+cat > .gitignore << 'EOF'
+.venv/
+venv/
+__pycache__/
+*.pyc
+runs/
+prediction/
+*.pt
+EOF*.jpg
+*.jpg
