@@ -6,4 +6,5 @@ __pycache__/
 runs/
 prediction/
 *.pt
-EOF
+EOF*.jpg
+*.jpg
