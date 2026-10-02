@@ -1,3 +1,4 @@
+/dataset/raw/
 cat > .gitignore << 'EOF'
 .venv/
 venv/
@@ -8,3 +9,9 @@ prediction/
 *.pt
 EOF*.jpg
 *.jpg
+
+# Test media
+video.webm
+
+# Raw datasets
+ dataset/raw/
