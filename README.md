@@ -1,87 +1,78 @@
-# Vayuputra - NIDAR AirMouse
+# NIDAR M6 - Survivor Detection
 
-Vayuputra is an indoor UAV search-and-rescue project targeting GPS-denied
-operation. The intended flight stack is PX4 with ROS 2 Jazzy, simulation in
-Gazebo, mapping and navigation in ROS 2, and a React/FastAPI ground control
-station.
+Computer Vision module for the NIDAR Vayuputra project.
 
-## Repository status
+## Phase 1 - Day 2
 
-The repository is at its initial implementation stage. The ROS 2 workspace
-currently contains `vayuputra_interfaces`, which defines the first
-perception-to-mapping/GCS message contract. The other directories below are
-scaffolding placeholders; their components are not implemented yet.
+Reusable YOLOv11-based survivor/person detection pipeline.
 
-```text
-firmware/
-ros2_ws/
-└── src/
-    ├── vayuputra_bringup/
-    ├── vayuputra_interfaces/  # Shared ROS 2 message definitions
-    ├── vayuputra_sensors/
-    ├── vayuputra_slam/
-    ├── vayuputra_navigation/
-    ├── vayuputra_exploration/
-    ├── vayuputra_mission/
-    ├── vayuputra_detection/
-    └── vayuputra_mavlink/
-simulation/
-├── gazebo/
-├── worlds/
-└── models/
-gcs/
-├── frontend/
-└── backend/
-scripts/
-docs/
-tests/
-```
+### Completed
 
-Keep simulation assets separate from real-hardware configuration. ROS
-functionality should be split into focused packages as those components are
-implemented rather than placing the system in one monolithic package.
+- Reusable YOLOv11 detector
+- Image-based inference
+- Video-stream inference
+- Person-only detection
+- Configurable confidence threshold
+- Bounding-box extraction
+- Person center-coordinate calculation
+- Annotated image output
+- Memory-efficient streaming using `stream=True`
 
-## Prerequisites
+## Detection Output
 
-- Ubuntu 24.04
-- ROS 2 Jazzy
-- `colcon` and the ROS 2 `rosidl` build tools
+Each detected person contains:
 
-The ROS workspace has not yet been validated on Windows.
+- Class ID
+- Class name
+- Confidence
+- Bounding box: `[x1, y1, x2, y2]`
+- Center coordinates: `[center_x, center_y]`
 
-## Build the ROS 2 interfaces
+## Image Test
 
-From the repository root in a ROS 2 Jazzy environment:
+Input:
 
-```bash
-source /opt/ros/jazzy/setup.bash
-cd ros2_ws
-rosdep install --from-paths src --ignore-src -r -y
-colcon build --symlink-install
-source install/setup.bash
-```
+`bus.jpg`
 
-The generated message types are provided by the `vayuputra_interfaces`
-package. For example:
+Confidence threshold:
 
-```bash
-ros2 interface show vayuputra_interfaces/msg/SurvivorDetectionArray
-```
+`0.25`
 
-## Planned implementation sequence
+Result:
 
-1. Add bringup and configuration once the component launch contracts are
-   defined.
-2. Add Gazebo/PX4 SITL integration and verify a simulated vehicle connection.
-3. Add sensor drivers and ROS integration, then SLAM/localization and map
-   outputs.
-4. Implement navigation, exploration, obstacle handling, and mission
-   management as separate ROS 2 packages.
-5. Add survivor detection and depth-based map positioning using the shared
-   interfaces.
-6. Add the FastAPI/MAVSDK backend and React GCS, then validate the full flow in
-   SITL before targeting hardware.
+- 4 persons detected
 
-Each component should include its own build/run instructions and tests as it
-is added. Hardware behavior must not be considered verified based on SITL
-results alone.
+## Confidence Threshold Test
+
+- Threshold 0.70 -> 3 persons
+- Threshold 0.50 -> 4 persons
+- Threshold 0.25 -> 4 persons
+
+## Video Test
+
+Input:
+
+`video.webm`
+
+Confidence threshold:
+
+`0.25`
+
+Result:
+
+- Frames processed: 79
+- Total person detections: 93
+- Maximum persons/frame: 3
+
+## Files
+
+- `detector.py` - Reusable YOLOv11 detection class
+- `yolo.py` - Image detection entry point
+- `video_test.py` - Video-stream detection test
+- `prediction/` - Annotated detection output
+
+## Current Scope
+
+The current pipeline supports image and video input.
+
+ROS 2, camera hardware, RealSense depth, 3D localization, and GCS integration are handled in later phases.
