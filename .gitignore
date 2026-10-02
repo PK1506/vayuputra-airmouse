@@ -8,3 +8,6 @@ prediction/
 *.pt
 EOF*.jpg
 *.jpg
+
+# Test media
+video.webm
