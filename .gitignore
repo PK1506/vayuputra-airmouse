@@ -1,0 +1,24 @@
+# Python environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated YOLO / application output
+runs/
+prediction/
+
+# Model weights
+*.pt
+
+# Images and test media generated locally
+*.jpg
+video.webm
+
+# Raw datasets — do not commit
+/dataset/raw/
+
+# Processed dataset — generated locally, do not commit
+/dataset/processed/

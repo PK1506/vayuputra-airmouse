@@ -1,0 +1,10 @@
+path: ../dataset/processed/merged
+
+train: images/train
+val: images/val
+test: images/test
+
+nc: 1
+
+names:
+  0: person
