@@ -85,3 +85,27 @@ ros2 interface show vayuputra_interfaces/msg/SurvivorDetectionArray
 Each component should include its own build/run instructions and tests as it
 is added. Hardware behavior must not be considered verified based on SITL
 results alone.
+
+## Survivor Detection Model
+
+The survivor-detection work currently has a COCO-pretrained YOLO11s baseline
+and a partially completed NIDAR-specific YOLO11n training run.
+
+- **Provisional validation candidate:** COCO-pretrained YOLO11s at image size 640.
+- **Validation metrics:** precision 0.474546, recall 0.268345, mAP50 0.245278,
+  and mAP50-95 0.089367.
+- **Comparison:** see `training/COMPARISON.md`.
+- **Model limitations and evaluation details:** see `training/MODEL_CARD.md`.
+- **Baseline weights:** local file `yolo11s.pt`; SHA-256
+  `85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5`.
+
+Model weights are excluded from ordinary Git history. The baseline weights have
+not yet been published as a shared release artifact, so teammates must not
+assume that the local file is available to them. Run2 has not been executed,
+and the baseline-versus-Run1 comparison is not controlled because the model
+variants and image sizes differ.
+
+These results are validation evidence only. They do not establish field
+performance, successful NIDAR-specific fine-tuning, or survivor absence when
+the detector returns no detections. Do not use the frozen unseen-test set for
+model selection.
