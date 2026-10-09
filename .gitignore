@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Raw datasets
+dataset/raw/
+
+# Generated/processed dataset images and labels
+dataset/processed/**/images/
+dataset/processed/**/labels/
+
+# Generated visual checks
+dataset/processed/visual_check/
+
+# Frozen unseen-test videos
+dataset/unseen_test/videos/
+
+# Training/inference outputs
+runs/
+training/runs/*
+!training/runs/.gitkeep
+
+# YOLO model weights
+*.pt
+
+# Local/demo media
+bus.jpg
+video.webm
+
+# Generated prediction outputs
+prediction/detection_result.jpg
+
+# Day 5 supplementary source dataset
+dataset/supplementary/source/
+
+# Frozen unseen test images and labels
+dataset/unseen_test/images/
+dataset/unseen_test/labels/
+
+# Keep frozen-test metadata/checksums tracked
+!dataset/unseen_test/SOURCE.md
+!dataset/unseen_test/FILES.sha256
+!dataset/unseen_test/LABELS.sha256
+
+# Supplementary generated annotation images/labels
+dataset/supplementary/images/
+dataset/supplementary/labels/
+!dataset/unseen_test/images.sha256
+!dataset/unseen_test/labels.sha256

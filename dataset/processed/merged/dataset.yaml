@@ -1,0 +1,9 @@
+path: /home/shitrin/vscode/NIDAR-M6-Survivor-Detection/dataset/processed/merged
+
+train: images/train
+val: images/val
+test: images/test
+
+nc: 1
+names:
+  0: person

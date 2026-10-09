@@ -1,0 +1,10 @@
+model: yolo11n.pt
+imgsz: 320
+epochs: 50
+batch: 1
+patience: 10
+seed: 0
+device: cpu
+pretrained: true
+project: training/runs
+name: run1_cpu

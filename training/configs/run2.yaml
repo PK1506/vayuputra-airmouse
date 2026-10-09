@@ -1,0 +1,14 @@
+# Proposed experiment only — not yet executed.
+# Higher resolution tests the small/distant-person hypothesis.
+# Run on suitable hardware; CPU training was prohibitively slow.
+
+model: yolo11n.pt
+imgsz: 640
+epochs: 20
+batch: 1
+patience: 5
+seed: 0
+device: 0
+pretrained: true
+project: training/runs
+name: run2_imgsz640
