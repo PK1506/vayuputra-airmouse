@@ -50,3 +50,22 @@ dataset/supplementary/images/
 dataset/supplementary/labels/
 !dataset/unseen_test/images.sha256
 !dataset/unseen_test/labels.sha256
+
+# Local generated audit/demo artifacts
+duplicate_annotation_review.png
+dataset/quarantine/
+prediction/folder_smoke_test/
+prediction/output/
+prediction/team_lead_demo/
+prediction/video_smoke_test/
+prediction/visible_demo/
+prediction/final_submission_20261016_2200/
+validation/annotation_review_gt/
+validation/diagnostics/
+validation/unseen_eval_data/
+
+# General local artifacts
+*.log
+*.bak
+*.orig
+*.tmp
