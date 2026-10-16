@@ -85,3 +85,10 @@ ros2 interface show vayuputra_interfaces/msg/SurvivorDetectionArray
 Each component should include its own build/run instructions and tests as it
 is added. Hardware behavior must not be considered verified based on SITL
 results alone.
+
+## Stock SITL baseline
+
+The first PX4/Gazebo/ROS 2 bring-up record and a reproducible launch helper are
+available in [docs/first-milestone-stock-sitl.md](docs/first-milestone-stock-sitl.md).
+This baseline uses a pinned Ubuntu 24.04, ROS 2 Jazzy, Gazebo Harmonic container
+and the stock PX4 X500 before any Vayuputra-specific model work begins.
