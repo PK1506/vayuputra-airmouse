@@ -41,7 +41,9 @@ These are low-confidence detections from the current trained checkpoint. They ar
 
 - Checkpoint exists: `training/runs/run1_cpu/weights/best.pt`
 - Training run status: stopped at epoch 28 of a planned 50 epochs
+- Documented reason for stopping: the repo analysis notes record that CPU training was prohibitively slow; no separate early-stop cause is documented in the training logs
 - Validation metrics: precision 0.287, recall 0.143, mAP@50 0.0987, mAP@50–95 0.0271
+- Frozen unseen result using the existing checkpoint: precision 0.273, recall 0.109, mAP@50 0.107, mAP@50–95 0.0248
 - Automated tests: `PYTHONPATH=. pytest -q` -> 9 passed in 26.47s
 - README status: updated to clearly state the actual metrics and the prototype status
 

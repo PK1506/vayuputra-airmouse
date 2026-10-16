@@ -95,8 +95,10 @@ The validation metrics above are from the existing baseline validation report. T
 - Checkpoint: `training/runs/run1_cpu/weights/best.pt`
 - Run: NIDAR Run 1 for YOLO11n
 - Training status: stopped at epoch 28 of a planned 50 epochs
+- Documented reason for stopping: the training logs and analysis notes identify CPU training as prohibitively slow; no separate early-stop trigger is documented in the training config beyond the runtime limitations noted in `training/ANALYSIS.md` and `training/COMPARISON.md`
 - Validation metrics: precision 0.287, recall 0.143, mAP@50 0.0987, mAP@50–95 0.0271
-- Scope: validation-set results only; frozen unseen data was not used for threshold tuning
+- Frozen unseen test result using the existing checkpoint: precision 0.273, recall 0.109, mAP@50 0.107, mAP@50–95 0.0248
+- Scope: validation-set and frozen unseen-set evidence only; the unseen set was not used for training, threshold tuning, or model selection
 - Project status: prototype, not field-ready, and not suitable as an operational single-source detector claim
 
 This trained checkpoint is a working research prototype under active evaluation, not a deployment-ready survivor detection system.
