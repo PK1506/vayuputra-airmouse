@@ -15,6 +15,14 @@ setup(
             'share/' + package_name,
             ['package.xml']
         ),
+        (
+            'share/' + package_name + '/config',
+            ['config/sensor_topics.yaml']
+        ),
+        (
+        'share/' + package_name + '/launch',
+        ['launch/sensor_config.launch.py']
+        ),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,6 +32,9 @@ setup(
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [],
+        'console_scripts': [
+                    'sensor_config_node = vayuputra_sensors.sensor_config_node:main',
+
+        ],
     },
 )

@@ -20,10 +20,12 @@ setup(
     zip_safe=True,
     maintainer='Vayuputra Team',
     maintainer_email='maintainers@vayuputra.invalid',
-    description='Mission-level coordination and integration for the Vayuputra search-and-rescue UAV.',
+    description='Mission management foundation for the Vayuputra UAV.',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [],
+        'console_scripts': [
+            'mission_manager_node = vayuputra_mission.mission_manager_node:main',
+        ],
     },
 )

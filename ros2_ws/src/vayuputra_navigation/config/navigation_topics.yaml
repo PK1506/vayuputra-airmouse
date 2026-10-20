@@ -1,0 +1,13 @@
+/**:
+  ros__parameters:
+    goal_topic: "/navigation/goal"
+    goal_message_type: "geometry_msgs/msg/PoseStamped"
+
+    cmd_vel_topic: "/navigation/cmd_vel"
+    cmd_vel_message_type: "geometry_msgs/msg/Twist"
+
+    status_topic: "/navigation/status"
+    status_message_type: "std_msgs/msg/String"
+
+    navigate_action: "/navigate_to"
+    navigate_action_type: "nav2_msgs/action/NavigateToPose"

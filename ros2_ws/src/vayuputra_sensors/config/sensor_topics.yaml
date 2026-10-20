@@ -1,0 +1,18 @@
+/**:
+  ros__parameters:
+
+    lidar_topic: "/sensors/lidar/points"
+    lidar_message_type: "sensor_msgs/msg/PointCloud2"
+
+    imu_topic: "/sensors/imu/data"
+    imu_message_type: "sensor_msgs/msg/Imu"
+
+    camera_image_topic: "/sensors/camera/image"
+    camera_image_message_type: "sensor_msgs/msg/Image"
+
+    camera_info_topic: "/sensors/camera/camera_info"
+    camera_info_message_type: "sensor_msgs/msg/CameraInfo"
+
+
+    depth_image_topic: "/sensors/depth/image"
+    depth_image_message_type: "sensor_msgs/msg/Image"

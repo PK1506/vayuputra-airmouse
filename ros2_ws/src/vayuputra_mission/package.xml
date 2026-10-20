@@ -16,6 +16,8 @@
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>vayuputra_interfaces</exec_depend>
 
   <export>
     <build_type>ament_python</build_type>
