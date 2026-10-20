@@ -1,0 +1,10 @@
+/**:
+  ros__parameters:
+    map_topic: "/slam/map"
+    map_message_type: "nav_msgs/msg/OccupancyGrid"
+
+    pose_topic: "/slam/pose"
+    pose_message_type: "geometry_msgs/msg/PoseStamped"
+
+    odometry_topic: "/slam/odometry"
+    odometry_message_type: "nav_msgs/msg/Odometry"
