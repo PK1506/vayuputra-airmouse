@@ -24,6 +24,10 @@ setup(
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [],
+        'console_scripts': [
+            'odometry_converter = vayuputra_mavlink.odometry_converter:main',
+            'imu_converter = vayuputra_mavlink.imu_converter:main',
+
+        ],
     },
 )

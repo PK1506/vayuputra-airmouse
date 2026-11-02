@@ -17,3 +17,4 @@ __pycache__/
 # Generated TF2 visualization files
 frames_*.gv
 frames_*.pdf
+/maps/nidar_map.pgm

@@ -9,10 +9,10 @@ def generate_launch_description():
             executable='static_transform_publisher',
             name='base_to_lidar',
             arguments=[
-                '0', '0', '0',
+                '0.12', '0', '0.02',
                 '0', '0', '0',
                 'base_link',
-                'lidar_link'
+                'link'
             ],
         ),
 
