@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<package format="3">
+
+  <name>vayuputra_exploration</name>
+
+  <version>0.1.0</version>
+
+  <description>
+    Autonomous exploration ROS 2 integration for the Vayuputra search-and-rescue UAV.
+  </description>
+
+  <maintainer email="maintainers@vayuputra.invalid">Vayuputra Team</maintainer>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+
+</package>

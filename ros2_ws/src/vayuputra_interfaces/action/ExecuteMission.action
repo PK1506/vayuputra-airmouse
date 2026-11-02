@@ -1,0 +1,8 @@
+string mission_id
+string mission_config
+---
+bool success
+string message
+---
+string current_stage
+float32 progress
